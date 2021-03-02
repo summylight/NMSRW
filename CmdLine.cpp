@@ -1,6 +1,10 @@
-#include <cmdline.h>
+#include "CmdLine.h"
 
-
+void CmdLine::prepare(){
+    sfmt_init_gen_rand(&SfmtSeed, time(NULL));
+    random_device rd;
+    rng.seed(rd);
+}
 void CmdLine::parse_cmdargs(int argc, char **argv) {
     
   for (int i=1; i<argc; i++) {

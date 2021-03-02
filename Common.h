@@ -17,6 +17,9 @@ include一些常用的标准库和igraph库等
 #include <unordered_set>
 #include <map>
 #include <unordered_map>
+#include <thread>
+
+
 #include "SFMT/SFMT.h"
 
 
@@ -27,12 +30,22 @@ include一些常用的标准库和igraph库等
 #define MOTIF6_NUM 112
 #define MOTIF7_NUM 853
 
+#define INVALID -1
+
 #define MIN_MOTIF_SIZE 5
 #define MAX_MOTIF_SIZE 7
+
+
+#define ERROR_HEADER "Error: "
+
+
 using namespace std;
 
 
 typedef unordered_map<string, int> mapStringInt;
+
+
+typedef enum {NOMETHOD, NMSRW, SSRW, NOESCAPE, SHOTGUN} MethodType; //NOMETHOD == NMSRW
 
 
 /**
